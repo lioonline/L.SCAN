@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "MainViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    MainViewController *main  = [MainViewController new];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:main];
+    
+     nav.interactivePopGestureRecognizer.enabled = YES;
+    
+    self.window.rootViewController = nav;
+    
+    [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 

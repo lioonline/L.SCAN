@@ -7,15 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B3515D81D0AB83A0046A854 /* ResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3515D71D0AB83A0046A854 /* ResultModel.m */; };
+		9B3515DB1D0AD1420046A854 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3515DA1D0AD1420046A854 /* DetailViewController.m */; };
 		9B45AA551D0A5CD300AF1346 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45AA541D0A5CD300AF1346 /* main.m */; };
 		9B45AA581D0A5CD300AF1346 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45AA571D0A5CD300AF1346 /* AppDelegate.m */; };
 		9B45AA5B1D0A5CD300AF1346 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45AA5A1D0A5CD300AF1346 /* ViewController.m */; };
 		9B45AA5E1D0A5CD300AF1346 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B45AA5C1D0A5CD300AF1346 /* Main.storyboard */; };
 		9B45AA601D0A5CD300AF1346 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B45AA5F1D0A5CD300AF1346 /* Assets.xcassets */; };
 		9B45AA631D0A5CD300AF1346 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B45AA611D0A5CD300AF1346 /* LaunchScreen.storyboard */; };
+		9B45AA6C1D0A5D0800AF1346 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45AA6B1D0A5D0800AF1346 /* BaseViewController.m */; };
+		9B45AA6F1D0A5D8F00AF1346 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45AA6E1D0A5D8F00AF1346 /* MainViewController.m */; };
+		9B45AA721D0A5FBB00AF1346 /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45AA711D0A5FBB00AF1346 /* UIColor+HexColor.m */; };
+		9B6D15501D0AFE830041C4C2 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6D154F1D0AFE830041C4C2 /* SettingViewController.m */; };
+		9BB918181D0AA6ED0092DDF7 /* DKScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB918171D0AA6ED0092DDF7 /* DKScanViewController.m */; };
+		9BB9181A1D0AA9B60092DDF7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB918191D0AA9B60092DDF7 /* AudioToolbox.framework */; };
+		9BB9181C1D0AAB330092DDF7 /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9181B1D0AAB330092DDF7 /* ding.wav */; };
+		9BB9181E1D0AABEE0092DDF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB9181D1D0AABEE0092DDF7 /* Security.framework */; };
+		9BB918201D0AABF90092DDF7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB9181F1D0AABF90092DDF7 /* libsqlite3.tbd */; };
+		EE1B86B78535005B7409948B /* libPods-LSCAN.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F1298CA00B13073D88E697C /* libPods-LSCAN.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A05849318D0269AB5B6936E /* Pods-LSCAN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LSCAN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LSCAN/Pods-LSCAN.debug.xcconfig"; sourceTree = "<group>"; };
+		6F1298CA00B13073D88E697C /* libPods-LSCAN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LSCAN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B3515D61D0AB83A0046A854 /* ResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultModel.h; sourceTree = "<group>"; };
+		9B3515D71D0AB83A0046A854 /* ResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultModel.m; sourceTree = "<group>"; };
+		9B3515D91D0AD1420046A854 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		9B3515DA1D0AD1420046A854 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		9B45AA501D0A5CD300AF1346 /* LSCAN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LSCAN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B45AA541D0A5CD300AF1346 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B45AA561D0A5CD300AF1346 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +44,22 @@
 		9B45AA5F1D0A5CD300AF1346 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B45AA621D0A5CD300AF1346 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B45AA641D0A5CD300AF1346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B45AA6A1D0A5D0800AF1346 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		9B45AA6B1D0A5D0800AF1346 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		9B45AA6D1D0A5D8F00AF1346 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		9B45AA6E1D0A5D8F00AF1346 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		9B45AA701D0A5FBB00AF1346 /* UIColor+HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexColor.h"; sourceTree = "<group>"; };
+		9B45AA711D0A5FBB00AF1346 /* UIColor+HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColor.m"; sourceTree = "<group>"; };
+		9B6D154D1D0AE12E0041C4C2 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		9B6D154E1D0AFE830041C4C2 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		9B6D154F1D0AFE830041C4C2 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		9BB918161D0AA6ED0092DDF7 /* DKScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKScanViewController.h; sourceTree = "<group>"; };
+		9BB918171D0AA6ED0092DDF7 /* DKScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKScanViewController.m; sourceTree = "<group>"; };
+		9BB918191D0AA9B60092DDF7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9BB9181B1D0AAB330092DDF7 /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
+		9BB9181D1D0AABEE0092DDF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9BB9181F1D0AABF90092DDF7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		ED6487DB33DD493BC33D8B1F /* Pods-LSCAN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LSCAN.release.xcconfig"; path = "Pods/Target Support Files/Pods-LSCAN/Pods-LSCAN.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +67,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BB918201D0AABF90092DDF7 /* libsqlite3.tbd in Frameworks */,
+				9BB9181E1D0AABEE0092DDF7 /* Security.framework in Frameworks */,
+				9BB9181A1D0AA9B60092DDF7 /* AudioToolbox.framework in Frameworks */,
+				EE1B86B78535005B7409948B /* libPods-LSCAN.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		947079E92F3A08E8B09F357E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F1298CA00B13073D88E697C /* libPods-LSCAN.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9B45AA471D0A5CD300AF1346 = {
 			isa = PBXGroup;
 			children = (
+				9BB9181F1D0AABF90092DDF7 /* libsqlite3.tbd */,
+				9BB9181D1D0AABEE0092DDF7 /* Security.framework */,
+				9BB918191D0AA9B60092DDF7 /* AudioToolbox.framework */,
 				9B45AA521D0A5CD300AF1346 /* LSCAN */,
 				9B45AA511D0A5CD300AF1346 /* Products */,
+				D3C2B1AA4C9E8C79D6FBBB28 /* Pods */,
+				947079E92F3A08E8B09F357E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,10 +109,10 @@
 		9B45AA521D0A5CD300AF1346 /* LSCAN */ = {
 			isa = PBXGroup;
 			children = (
-				9B45AA561D0A5CD300AF1346 /* AppDelegate.h */,
-				9B45AA571D0A5CD300AF1346 /* AppDelegate.m */,
-				9B45AA591D0A5CD300AF1346 /* ViewController.h */,
-				9B45AA5A1D0A5CD300AF1346 /* ViewController.m */,
+				9BB918391D0AAC8F0092DDF7 /* Model */,
+				9BB918381D0AAC570092DDF7 /* Tools */,
+				9B45AA741D0A600300AF1346 /* ViewController */,
+				9B45AA731D0A5FF000AF1346 /* Category */,
 				9B45AA5C1D0A5CD300AF1346 /* Main.storyboard */,
 				9B45AA5F1D0A5CD300AF1346 /* Assets.xcassets */,
 				9B45AA611D0A5CD300AF1346 /* LaunchScreen.storyboard */,
@@ -74,9 +125,66 @@
 		9B45AA531D0A5CD300AF1346 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9BB9181B1D0AAB330092DDF7 /* ding.wav */,
+				9B45AA571D0A5CD300AF1346 /* AppDelegate.m */,
+				9B45AA561D0A5CD300AF1346 /* AppDelegate.h */,
 				9B45AA541D0A5CD300AF1346 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9B45AA731D0A5FF000AF1346 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				9B45AA701D0A5FBB00AF1346 /* UIColor+HexColor.h */,
+				9B45AA711D0A5FBB00AF1346 /* UIColor+HexColor.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		9B45AA741D0A600300AF1346 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9BB918161D0AA6ED0092DDF7 /* DKScanViewController.h */,
+				9BB918171D0AA6ED0092DDF7 /* DKScanViewController.m */,
+				9B45AA591D0A5CD300AF1346 /* ViewController.h */,
+				9B45AA5A1D0A5CD300AF1346 /* ViewController.m */,
+				9B45AA6A1D0A5D0800AF1346 /* BaseViewController.h */,
+				9B45AA6B1D0A5D0800AF1346 /* BaseViewController.m */,
+				9B45AA6D1D0A5D8F00AF1346 /* MainViewController.h */,
+				9B45AA6E1D0A5D8F00AF1346 /* MainViewController.m */,
+				9B3515D91D0AD1420046A854 /* DetailViewController.h */,
+				9B3515DA1D0AD1420046A854 /* DetailViewController.m */,
+				9B6D154E1D0AFE830041C4C2 /* SettingViewController.h */,
+				9B6D154F1D0AFE830041C4C2 /* SettingViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		9BB918381D0AAC570092DDF7 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				9B6D154D1D0AE12E0041C4C2 /* Header.h */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		9BB918391D0AAC8F0092DDF7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B3515D61D0AB83A0046A854 /* ResultModel.h */,
+				9B3515D71D0AB83A0046A854 /* ResultModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D3C2B1AA4C9E8C79D6FBBB28 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A05849318D0269AB5B6936E /* Pods-LSCAN.debug.xcconfig */,
+				ED6487DB33DD493BC33D8B1F /* Pods-LSCAN.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +194,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B45AA671D0A5CD300AF1346 /* Build configuration list for PBXNativeTarget "LSCAN" */;
 			buildPhases = (
+				49F881D641477E4721AB3F3F /* Check Pods Manifest.lock */,
 				9B45AA4C1D0A5CD300AF1346 /* Sources */,
 				9B45AA4D1D0A5CD300AF1346 /* Frameworks */,
 				9B45AA4E1D0A5CD300AF1346 /* Resources */,
+				906F89FB6FEBAC2DA6D0B068 /* Embed Pods Frameworks */,
+				68CC93D36FA8BC1D0E8EC8AD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -138,20 +249,76 @@
 			files = (
 				9B45AA631D0A5CD300AF1346 /* LaunchScreen.storyboard in Resources */,
 				9B45AA601D0A5CD300AF1346 /* Assets.xcassets in Resources */,
+				9BB9181C1D0AAB330092DDF7 /* ding.wav in Resources */,
 				9B45AA5E1D0A5CD300AF1346 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		49F881D641477E4721AB3F3F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		68CC93D36FA8BC1D0E8EC8AD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LSCAN/Pods-LSCAN-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		906F89FB6FEBAC2DA6D0B068 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LSCAN/Pods-LSCAN-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9B45AA4C1D0A5CD300AF1346 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B3515D81D0AB83A0046A854 /* ResultModel.m in Sources */,
 				9B45AA5B1D0A5CD300AF1346 /* ViewController.m in Sources */,
+				9B3515DB1D0AD1420046A854 /* DetailViewController.m in Sources */,
+				9B45AA6C1D0A5D0800AF1346 /* BaseViewController.m in Sources */,
 				9B45AA581D0A5CD300AF1346 /* AppDelegate.m in Sources */,
+				9B45AA6F1D0A5D8F00AF1346 /* MainViewController.m in Sources */,
+				9BB918181D0AA6ED0092DDF7 /* DKScanViewController.m in Sources */,
 				9B45AA551D0A5CD300AF1346 /* main.m in Sources */,
+				9B45AA721D0A5FBB00AF1346 /* UIColor+HexColor.m in Sources */,
+				9B6D15501D0AFE830041C4C2 /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,9 +428,11 @@
 		};
 		9B45AA681D0A5CD300AF1346 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A05849318D0269AB5B6936E /* Pods-LSCAN.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LSCAN/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leediscover.lscan.LSCAN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -272,9 +441,11 @@
 		};
 		9B45AA691D0A5CD300AF1346 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED6487DB33DD493BC33D8B1F /* Pods-LSCAN.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LSCAN/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leediscover.lscan.LSCAN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,6 +471,7 @@
 				9B45AA691D0A5CD300AF1346 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
