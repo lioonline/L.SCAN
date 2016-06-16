@@ -5,5 +5,7 @@
 
 target 'LSCAN' do
 pod 'Realm'
+pod 'Masonry'
+
 end
 

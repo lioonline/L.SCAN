@@ -18,6 +18,7 @@
 		9B45AA6C1D0A5D0800AF1346 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45AA6B1D0A5D0800AF1346 /* BaseViewController.m */; };
 		9B45AA6F1D0A5D8F00AF1346 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45AA6E1D0A5D8F00AF1346 /* MainViewController.m */; };
 		9B45AA721D0A5FBB00AF1346 /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45AA711D0A5FBB00AF1346 /* UIColor+HexColor.m */; };
+		9B515B951D12E14500FC624A /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B515B941D12E14500FC624A /* MainTableViewCell.m */; };
 		9B6D15501D0AFE830041C4C2 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6D154F1D0AFE830041C4C2 /* SettingViewController.m */; };
 		9BB918181D0AA6ED0092DDF7 /* DKScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB918171D0AA6ED0092DDF7 /* DKScanViewController.m */; };
 		9BB9181A1D0AA9B60092DDF7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB918191D0AA9B60092DDF7 /* AudioToolbox.framework */; };
@@ -50,6 +51,8 @@
 		9B45AA6E1D0A5D8F00AF1346 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		9B45AA701D0A5FBB00AF1346 /* UIColor+HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexColor.h"; sourceTree = "<group>"; };
 		9B45AA711D0A5FBB00AF1346 /* UIColor+HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColor.m"; sourceTree = "<group>"; };
+		9B515B931D12E14500FC624A /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
+		9B515B941D12E14500FC624A /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
 		9B6D154D1D0AE12E0041C4C2 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		9B6D154E1D0AFE830041C4C2 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		9B6D154F1D0AFE830041C4C2 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
@@ -109,6 +112,7 @@
 		9B45AA521D0A5CD300AF1346 /* LSCAN */ = {
 			isa = PBXGroup;
 			children = (
+				9B515B921D12E11C00FC624A /* Views */,
 				9BB918391D0AAC8F0092DDF7 /* Model */,
 				9BB918381D0AAC570092DDF7 /* Tools */,
 				9B45AA741D0A600300AF1346 /* ViewController */,
@@ -159,6 +163,15 @@
 				9B6D154F1D0AFE830041C4C2 /* SettingViewController.m */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		9B515B921D12E11C00FC624A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9B515B931D12E14500FC624A /* MainTableViewCell.h */,
+				9B515B941D12E14500FC624A /* MainTableViewCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		9BB918381D0AAC570092DDF7 /* Tools */ = {
@@ -310,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B3515D81D0AB83A0046A854 /* ResultModel.m in Sources */,
+				9B515B951D12E14500FC624A /* MainTableViewCell.m in Sources */,
 				9B45AA5B1D0A5CD300AF1346 /* ViewController.m in Sources */,
 				9B3515DB1D0AD1420046A854 /* DetailViewController.m in Sources */,
 				9B45AA6C1D0A5D0800AF1346 /* BaseViewController.m in Sources */,

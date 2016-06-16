@@ -13,6 +13,7 @@
 #import "DetailViewController.h"
 #import "Header.h"
 #import "SettingViewController.h"
+#import "MainTableViewCell.h"
 @interface MainViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) NSArray *coclorArray;
@@ -42,10 +43,10 @@
     tableView.delegate = self;
     tableView.dataSource = self;
     [self.view addSubview:tableView];
-    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    [tableView registerClass:[MainTableViewCell class] forCellReuseIdentifier:@"cell"];
     tableView.backgroundColor = [UIColor colorWithRed:245 green:245 blue:245 alpha:1];
     _tableView = tableView;
-    
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     UIButton *button = [UIButton new];
     [self.view addSubview:button];
@@ -101,7 +102,7 @@
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    MainTableViewCell *cell = (MainTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (_models.count > 0) {
         ResultModel *model = _models[indexPath.row];
         cell.textLabel.text = model.resultString;
