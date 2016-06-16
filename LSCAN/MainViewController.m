@@ -37,16 +37,18 @@
 
 -(void)initView {
     
+    self.view.frame = CGRectMake(0, 0, SCREEN_SIZE.width, SCREEN_SIZE.height);
     _dataArray = [NSMutableArray array];
 //    self.navigationController.navigationBarHidden = YES;
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    _tableView = tableView;
     tableView.delegate = self;
     tableView.dataSource = self;
     [self.view addSubview:tableView];
     [tableView registerClass:[MainTableViewCell class] forCellReuseIdentifier:@"cell"];
     tableView.backgroundColor = [UIColor colorWithRed:245 green:245 blue:245 alpha:1];
-    _tableView = tableView;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.backgroundColor = [UIColor blackColor];
     
     UIButton *button = [UIButton new];
     [self.view addSubview:button];
@@ -63,21 +65,21 @@
     [button.titleLabel setFont:LANTING];
     [button addTarget:self action:@selector(toScanViewController) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton *settingButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [settingButton setImage:[UIImage imageNamed:@"setting"] forState:normal];
-    settingButton.bounds = CGRectMake(0, 0, 30, 30);
-    [settingButton addTarget:self action:@selector(toSettingViewController) forControlEvents:UIControlEventTouchUpInside];
-    //button.tintColor = [UIColor blueColor];
-//    settingButton.backgroundColor = [UIColor redColor];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
-    
+//    UIButton *settingButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [settingButton setImage:[UIImage imageNamed:@"setting"] forState:normal];
+//    settingButton.bounds = CGRectMake(0, 0, 30, 30);
+//    [settingButton addTarget:self action:@selector(toSettingViewController) forControlEvents:UIControlEventTouchUpInside];
+//    //button.tintColor = [UIColor blueColor];
+////    settingButton.backgroundColor = [UIColor redColor];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
+    self.navigationController.navigationBarHidden = YES;
 
 }
 
 
 -(void)initData {
     
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"isFirstLogin"]) {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"isFirstLogin"] == NULL) {
       
         NSArray *tipsArray = @[@"使用指南",@"扫一扫快速读取二维码内容",@"滑动可删除扫描历史记录",@"风到这里就是粘，粘住过客的思念",@"雨到了这里缠成线，缠着我们流连人世间",@"If falling stars are hiding in your eyes"];
         for (int i = 0; i < tipsArray.count; i++) {
@@ -88,37 +90,44 @@
                 [realm addObject:firstList];
             }];
         }
-        [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:@"isFirstLogin"];
+        [[NSUserDefaults standardUserDefaults] setValue:@"YES" forKey:@"isFirstLogin"];
         
    
     }
     RLMResults<ResultModel *> *models = [ResultModel allObjects];
     _models = models;
 }
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return _models.count;
+}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _models.count;
+    return 1;
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MainTableViewCell *cell = (MainTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (_models.count > 0) {
-        ResultModel *model = _models[indexPath.row];
-        cell.textLabel.text = model.resultString;
-        cell.textLabel.font  = LANTING;
-        cell.textLabel.textColor = [UIColor colorWithHexColorString:@"#666666"];
+        ResultModel *model = _models[indexPath.section];
+        cell.contentLabel.text = [NSString stringWithFormat:@" %@", model.resultString];
+        cell.contentLabel.font  = LANTING;
+        cell.contentLabel.textColor = [UIColor colorWithHexColorString:@"#666666"];
     }
+    
+    
+    cell.backgroundColor = [UIColor blackColor];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    ResultModel *model = _models[indexPath.row];
-
-    DetailViewController *detatil = [[DetailViewController alloc] initWithContent:model.resultString];
-    
-    [self.navigationController pushViewController:detatil animated:YES];
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    ResultModel *model = _models[indexPath.row];
+//
+//    DetailViewController *detatil = [[DetailViewController alloc] initWithContent:model.resultString];
+//    
+//    [self.navigationController pushViewController:detatil animated:YES];
 }
 
 
@@ -140,19 +149,22 @@
 {
     if (editingStyle ==UITableViewCellEditingStyleDelete)
     {
-        ResultModel *model = _models[indexPath.row];
+        ResultModel *model = _models[indexPath.section];
         RLMRealm *realm = [RLMRealm defaultRealm];
         [realm beginWriteTransaction];
         [realm deleteObject:model];
         [realm commitWriteTransaction];
-        
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
+//        
+//        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     return @"删除";
 }
+
+
 
 -(void)toScanViewController {
     DKScanViewController * scan = [DKScanViewController new];
@@ -173,6 +185,8 @@
     _models = models;
     [_tableView reloadData];
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

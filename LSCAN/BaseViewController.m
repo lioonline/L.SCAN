@@ -21,10 +21,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     
-    self.view.backgroundColor = [UIColor whiteColor];
-    
+    self.view.backgroundColor = [UIColor blackColor];
 //    
 //    id target = self.navigationController.interactivePopGestureRecognizer.delegate;
 //    
@@ -36,7 +35,7 @@
 //    
 //    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
 
-    
+    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 //- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
@@ -62,5 +61,26 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+    //UIStatusBarStyleDefault = 0 黑色文字，浅色背景时使用
+    //UIStatusBarStyleLightContent = 1 白色文字，深色背景时使用
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES; //返回NO表示要显示，返回YES将hiden
+}
+
+-(void)viewDidLayoutSubviews
+{
+    CGRect viewBounds = self.view.bounds;
+    CGFloat topBarOffset = 20.0;
+    viewBounds.origin.y = -topBarOffset;
+    self.view.bounds = viewBounds;
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];}
 
 @end

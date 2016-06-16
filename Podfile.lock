@@ -1,12 +1,18 @@
 PODS:
+  - DateTools (1.7.0)
+  - Masonry (1.0.1)
   - Realm (1.0.0):
     - Realm/Headers (= 1.0.0)
   - Realm/Headers (1.0.0)
 
 DEPENDENCIES:
+  - DateTools
+  - Masonry
   - Realm
 
 SPEC CHECKSUMS:
+  DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   Realm: e15cd8e7c11d3e576f628ba0b7cb855269b4991c
 
 COCOAPODS: 0.39.0

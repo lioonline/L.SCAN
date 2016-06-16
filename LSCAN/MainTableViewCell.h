@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MainTableViewCell : UITableViewCell
+@property (nonatomic,strong) UILabel *dateLabel;
 
+@property (nonatomic,strong)   UILabel *contentLabel;
 @end
