@@ -14,7 +14,7 @@
 #import "Header.h"
 #import "SettingViewController.h"
 #import "MainTableViewCell.h"
-@interface MainViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface MainViewController ()<UITableViewDelegate,UITableViewDataSource,SlideDeleteCellDelegate>
 
 @property (nonatomic,strong) NSArray *coclorArray;
 @property (nonatomic,strong) NSMutableArray *dataArray;
@@ -37,18 +37,17 @@
 
 -(void)initView {
     
-    self.view.frame = CGRectMake(0, 0, SCREEN_SIZE.width, SCREEN_SIZE.height);
     _dataArray = [NSMutableArray array];
-//    self.navigationController.navigationBarHidden = YES;
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     _tableView = tableView;
     tableView.delegate = self;
     tableView.dataSource = self;
     [self.view addSubview:tableView];
     [tableView registerClass:[MainTableViewCell class] forCellReuseIdentifier:@"cell"];
-    tableView.backgroundColor = [UIColor colorWithRed:245 green:245 blue:245 alpha:1];
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tableView.backgroundColor = [UIColor blackColor];
+    tableView.backgroundColor = [UIColor colorWithRed:67/255.0 green:70/255.0 blue:76/255.0 alpha:1];
+    
+    
     
     UIButton *button = [UIButton new];
     [self.view addSubview:button];
@@ -97,32 +96,34 @@
     RLMResults<ResultModel *> *models = [ResultModel allObjects];
     _models = models;
 }
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return _models.count;
-}
+//-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//    return _models.count;
+//}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return _models.count;
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MainTableViewCell *cell = (MainTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (_models.count > 0) {
-        ResultModel *model = _models[indexPath.section];
+        ResultModel *model = _models[indexPath.row];
         cell.contentLabel.text = [NSString stringWithFormat:@" %@", model.resultString];
         cell.contentLabel.font  = LANTING;
         cell.contentLabel.textColor = [UIColor colorWithHexColorString:@"#666666"];
     }
+    cell.delegate =self;
     
     
-    cell.backgroundColor = [UIColor blackColor];
+    cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    cell.selectedBackgroundView = [UIView new];
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 //    ResultModel *model = _models[indexPath.row];
 //
 //    DetailViewController *detatil = [[DetailViewController alloc] initWithContent:model.resultString];
@@ -137,33 +138,22 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 0.01;
+    return 0.1;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0.01;
+    return 0.1;
 }
 
-
--(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle ==UITableViewCellEditingStyleDelete)
-    {
-        ResultModel *model = _models[indexPath.section];
-        RLMRealm *realm = [RLMRealm defaultRealm];
-        [realm beginWriteTransaction];
-        [realm deleteObject:model];
-        [realm commitWriteTransaction];
-        [tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
-//        
-//        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }
+-(void)slideToDeleteCell:(SlideDeleteCell *)slideDeleteCell{
+    NSIndexPath *indexPath = [_tableView indexPathForCell:slideDeleteCell];
+    ResultModel *model = _models[indexPath.row];
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    [realm deleteObject:model];
+    [realm commitWriteTransaction];
+    [_tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
-
--(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return @"删除";
-}
-
 
 
 -(void)toScanViewController {

@@ -20,6 +20,7 @@
 		9B45AA721D0A5FBB00AF1346 /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45AA711D0A5FBB00AF1346 /* UIColor+HexColor.m */; };
 		9B515B951D12E14500FC624A /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B515B941D12E14500FC624A /* MainTableViewCell.m */; };
 		9B6D15501D0AFE830041C4C2 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6D154F1D0AFE830041C4C2 /* SettingViewController.m */; };
+		9B9B82C91D168D00008F6C8A /* SlideDeleteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B82C81D168D00008F6C8A /* SlideDeleteCell.m */; };
 		9BB918181D0AA6ED0092DDF7 /* DKScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB918171D0AA6ED0092DDF7 /* DKScanViewController.m */; };
 		9BB9181A1D0AA9B60092DDF7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB918191D0AA9B60092DDF7 /* AudioToolbox.framework */; };
 		9BB9181C1D0AAB330092DDF7 /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9181B1D0AAB330092DDF7 /* ding.wav */; };
@@ -56,6 +57,8 @@
 		9B6D154D1D0AE12E0041C4C2 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		9B6D154E1D0AFE830041C4C2 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		9B6D154F1D0AFE830041C4C2 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		9B9B82C71D168D00008F6C8A /* SlideDeleteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideDeleteCell.h; sourceTree = "<group>"; };
+		9B9B82C81D168D00008F6C8A /* SlideDeleteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideDeleteCell.m; sourceTree = "<group>"; };
 		9BB918161D0AA6ED0092DDF7 /* DKScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKScanViewController.h; sourceTree = "<group>"; };
 		9BB918171D0AA6ED0092DDF7 /* DKScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKScanViewController.m; sourceTree = "<group>"; };
 		9BB918191D0AA9B60092DDF7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -177,6 +180,8 @@
 		9BB918381D0AAC570092DDF7 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				9B9B82C71D168D00008F6C8A /* SlideDeleteCell.h */,
+				9B9B82C81D168D00008F6C8A /* SlideDeleteCell.m */,
 				9B6D154D1D0AE12E0041C4C2 /* Header.h */,
 			);
 			name = Tools;
@@ -322,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B9B82C91D168D00008F6C8A /* SlideDeleteCell.m in Sources */,
 				9B3515D81D0AB83A0046A854 /* ResultModel.m in Sources */,
 				9B515B951D12E14500FC624A /* MainTableViewCell.m in Sources */,
 				9B45AA5B1D0A5CD300AF1346 /* ViewController.m in Sources */,

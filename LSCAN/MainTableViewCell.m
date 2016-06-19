@@ -39,6 +39,8 @@
     cellBgView.backgroundColor = [UIColor grayColor];
     cellBgView.layer.cornerRadius = 6;
     cellBgView.clipsToBounds = YES;
+
+    
     
     UILabel *dateLabel = [UILabel new];
     [cellBgView addSubview:dateLabel];
@@ -61,7 +63,7 @@
     
     NSString *str = [NSString stringWithFormat:@"%@\n%@:%@",day,hour,minute];
     NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:str];
-    [attStr addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20]} range:NSMakeRange(0, day.length)];
+    [attStr addAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"AmericanTypewriter-Bold" size:20]} range:NSMakeRange(0, day.length)];
     [attStr addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} range:NSMakeRange(day.length, attStr.length - day.length)];
     [attStr addAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} range:NSMakeRange(0, attStr.length)];
     dateLabel.attributedText = attStr;
@@ -78,6 +80,8 @@
     }];
     contentlabel.backgroundColor = [UIColor colorWithHexColorString:@"#FFCC99"];
     _contentLabel = contentlabel;
+    
+ 
     
     
     

@@ -10,7 +10,7 @@
 
 
 #import "BaseViewController.h"
-
+#import "Header.h"
 @interface BaseViewController ()<UIGestureRecognizerDelegate>
 
 @end
@@ -23,8 +23,12 @@
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     
-    self.view.backgroundColor = [UIColor blackColor];
-//    
+    self.view.backgroundColor =    [UIColor colorWithRed:67/255.0 green:70/255.0 blue:76/255.0 alpha:1];
+   
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:NO];
+
+    
+//
 //    id target = self.navigationController.interactivePopGestureRecognizer.delegate;
 //    
 //    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:@selector(handleNavigationTransition:)];
@@ -35,7 +39,7 @@
 //    
 //    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
 
-    [self setNeedsStatusBarAppearanceUpdate];
+//    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 //- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
@@ -63,24 +67,26 @@
 */
 
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-    //UIStatusBarStyleDefault = 0 黑色文字，浅色背景时使用
-    //UIStatusBarStyleLightContent = 1 白色文字，深色背景时使用
-}
+//- (UIStatusBarStyle)preferredStatusBarStyle
+//{
+//    return UIStatusBarStyleLightContent;
+//    //UIStatusBarStyleDefault = 0 黑色文字，浅色背景时使用
+//    //UIStatusBarStyleLightContent = 1 白色文字，深色背景时使用
+//}
+//
+//- (BOOL)prefersStatusBarHidden
+//{
+//    return YES; //返回NO表示要显示，返回YES将hiden
+//}
+//
+//-(void)viewDidLayoutSubviews
+//{
+//    CGRect viewBounds = self.view.bounds;
+//    CGFloat topBarOffset = 20.0;
+//    viewBounds.origin.y = -topBarOffset;
+//    self.view.bounds = viewBounds;
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+//}
 
-- (BOOL)prefersStatusBarHidden
-{
-    return YES; //返回NO表示要显示，返回YES将hiden
-}
-
--(void)viewDidLayoutSubviews
-{
-    CGRect viewBounds = self.view.bounds;
-    CGFloat topBarOffset = 20.0;
-    viewBounds.origin.y = -topBarOffset;
-    self.view.bounds = viewBounds;
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];}
 
 @end

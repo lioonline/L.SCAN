@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface MainTableViewCell : UITableViewCell
+#import "SlideDeleteCell.h"
+@interface MainTableViewCell : SlideDeleteCell
 @property (nonatomic,strong) UILabel *dateLabel;
 
 @property (nonatomic,strong)   UILabel *contentLabel;
