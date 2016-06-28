@@ -7,9 +7,10 @@
 //
 
 #import <Realm/Realm.h>
-
+#import "DateTools.h"
 @interface ResultModel : RLMObject
 @property (nonatomic,strong)NSString *resultString;
+@property (nonatomic,strong)NSDate *date;
 
 @end
 

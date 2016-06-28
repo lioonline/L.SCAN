@@ -13,11 +13,14 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "DKScanViewController.h"
 #import "ResultModel.h"
+#import "DateTools.h"
+#import "BlocksKit+UIKit.h"
 static SystemSoundID shake_sound_male_id = 0;
 
-@interface DKScanViewController ()<UIAlertViewDelegate>
+@interface DKScanViewController ()<UIAlertViewDelegate,UIActionSheetDelegate>
 
 @property (nonatomic,strong) NSString *stringValue;
+@property (nonatomic,strong) NSArray *arrayOfAllMatches;
 
 
 @end
@@ -239,12 +242,32 @@ static SystemSoundID shake_sound_male_id = 0;
         NSLog(@"%@",_stringValue);
         
         
+
+        
+        NSError *error;
+        NSString *regulaStr = @"\\bhttps?://[a-zA-Z0-9\\-.]+(?::(\\d+))?(?:(?:/[a-zA-Z0-9\\-._?,'+\\&%$=~*!():@\\\\]*)+)?";
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regulaStr
+                                                                               options:NSRegularExpressionCaseInsensitive
+                                                                                 error:&error];
+        NSArray *arrayOfAllMatches = [regex matchesInString:_stringValue options:0 range:NSMakeRange(0, [_stringValue length])];
+        _arrayOfAllMatches = arrayOfAllMatches;
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"扫描结果" message:[NSString stringWithFormat:@"%@",_stringValue] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        alertView.delegate = self;
+        if (arrayOfAllMatches.count >0) {
+            [alertView addButtonWithTitle:@"在Safari中打开链接"];
+        }
         [alertView show];
+
+        
+        
+
+        
         
         
         ResultModel *obj = [[ResultModel alloc] init];
         obj.resultString = _stringValue;
+        NSDate *date           = [NSDate date];
+        obj.date = date;
         RLMRealm *realm = [RLMRealm defaultRealm];
         [realm transactionWithBlock:^{
             [realm addObject:obj];
@@ -264,9 +287,35 @@ static SystemSoundID shake_sound_male_id = 0;
 - (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex
 {
   
-    
+    NSLog(@"buttonIndex  == %ld",buttonIndex);
     [_session startRunning];
     timer = [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(lineAnimation) userInfo:nil repeats:YES];
+    if (buttonIndex == 2) {
+        
+        
+        if (_arrayOfAllMatches.count == 1) {
+            
+            for (NSTextCheckingResult *match in _arrayOfAllMatches)
+            {
+                NSString* substringForMatch = [_stringValue substringWithRange:match.range];
+                NSLog(@"substringForMatch %@",substringForMatch);
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:substringForMatch]];
+            }
+            
+        }
+        else {
+            UIActionSheet *myActionSheet;
+            myActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:nil, nil];
+            for (NSTextCheckingResult *match in _arrayOfAllMatches)
+            {
+                NSString* substringForMatch = [_stringValue substringWithRange:match.range];
+                [myActionSheet addButtonWithTitle:substringForMatch];
+                
+            }
+            [myActionSheet showInView:self.view];
+        }
+
+    }
     
 }
 -(void)viewDidDisappear:(BOOL)animated{
@@ -275,7 +324,17 @@ static SystemSoundID shake_sound_male_id = 0;
     _session = nil;
 }
 
-
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex != 0) {
+        NSTextCheckingResult *match = _arrayOfAllMatches[buttonIndex - 1];
+        
+        NSString* substringForMatch = [_stringValue substringWithRange:match.range];
+        NSLog(@"substringForMatch %@",substringForMatch);
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:substringForMatch]];
+        
+        
+    }
+}
 
 
 -(void) playSound

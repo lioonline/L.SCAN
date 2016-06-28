@@ -7,5 +7,6 @@ target 'LSCAN' do
 pod 'Realm'
 pod 'Masonry'
 pod 'DateTools'
+pod 'BlocksKit'
 end
 

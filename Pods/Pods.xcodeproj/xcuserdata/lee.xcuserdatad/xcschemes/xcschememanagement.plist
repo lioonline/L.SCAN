@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>BlocksKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>DateTools.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,17 +37,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4A678A4F607F99610B3C34E2A28B1932</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4B611D1D4ED28792523E6C832F78966D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>83335267884446519AA670A835C938E8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EF4F92EE11637AD815E543573B47BDAC</key>
+		<key>DA1A7295DF2A99609DA0EEBF5E83233D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

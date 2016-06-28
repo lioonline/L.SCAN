@@ -7,9 +7,10 @@
 //
 
 #import "BaseViewController.h"
+typedef void(^hidden)(void);
 
 @interface DetailViewController : BaseViewController
-
+@property (nonatomic,strong)hidden hiddenBlock;
 -(id)initWithContent:(NSString *)content;
 
 @end
