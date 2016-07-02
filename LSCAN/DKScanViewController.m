@@ -287,7 +287,7 @@ static SystemSoundID shake_sound_male_id = 0;
 - (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex
 {
   
-    NSLog(@"buttonIndex  == %ld",buttonIndex);
+    NSLog(@"buttonIndex  == %ld",(long)buttonIndex);
     [_session startRunning];
     timer = [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(lineAnimation) userInfo:nil repeats:YES];
     if (buttonIndex == 2) {

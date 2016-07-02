@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B1276231D241298000F057D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B1276221D241298000F057D /* Images.xcassets */; };
 		9B3515D81D0AB83A0046A854 /* ResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3515D71D0AB83A0046A854 /* ResultModel.m */; };
 		9B3515DB1D0AD1420046A854 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3515DA1D0AD1420046A854 /* DetailViewController.m */; };
 		9B45AA551D0A5CD300AF1346 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45AA541D0A5CD300AF1346 /* main.m */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		2A05849318D0269AB5B6936E /* Pods-LSCAN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LSCAN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LSCAN/Pods-LSCAN.debug.xcconfig"; sourceTree = "<group>"; };
 		6F1298CA00B13073D88E697C /* libPods-LSCAN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LSCAN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B1276221D241298000F057D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9B3515D61D0AB83A0046A854 /* ResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultModel.h; sourceTree = "<group>"; };
 		9B3515D71D0AB83A0046A854 /* ResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultModel.m; sourceTree = "<group>"; };
 		9B3515D91D0AD1420046A854 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				9B45AA741D0A600300AF1346 /* ViewController */,
 				9B45AA731D0A5FF000AF1346 /* Category */,
 				9B45AA5C1D0A5CD300AF1346 /* Main.storyboard */,
+				9B1276221D241298000F057D /* Images.xcassets */,
 				9B45AA5F1D0A5CD300AF1346 /* Assets.xcassets */,
 				9B45AA611D0A5CD300AF1346 /* LaunchScreen.storyboard */,
 				9B45AA641D0A5CD300AF1346 /* Info.plist */,
@@ -239,6 +242,7 @@
 				TargetAttributes = {
 					9B45AA4F1D0A5CD300AF1346 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 4GC8V522M5;
 					};
 				};
 			};
@@ -266,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B45AA631D0A5CD300AF1346 /* LaunchScreen.storyboard in Resources */,
+				9B1276231D241298000F057D /* Images.xcassets in Resources */,
 				9B45AA601D0A5CD300AF1346 /* Assets.xcassets in Resources */,
 				9BB9181C1D0AAB330092DDF7 /* ding.wav in Resources */,
 				9B45AA5E1D0A5CD300AF1346 /* Main.storyboard in Resources */,
@@ -382,7 +387,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: jian li (5B8G77CPAT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: jian li (5B8G77CPAT)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -426,7 +432,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: jian li (RUGN46CN5V)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: jian li (RUGN46CN5V)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -451,6 +458,9 @@
 			baseConfigurationReference = 2A05849318D0269AB5B6936E /* Pods-LSCAN.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: jian li (5B8G77CPAT)";
 				INFOPLIST_FILE = LSCAN/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -464,6 +474,9 @@
 			baseConfigurationReference = ED6487DB33DD493BC33D8B1F /* Pods-LSCAN.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: jian li (RUGN46CN5V)";
 				INFOPLIST_FILE = LSCAN/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
